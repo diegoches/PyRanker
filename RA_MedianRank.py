@@ -1,13 +1,7 @@
 # -*- coding: utf-8 -*- #
 
-# # \authors Diego Chávez Escalante 
-# # \authors Jael Louis Zela Ruiz
-# # \authors Kelly Lopes
-# # \authors Luís Augusto Martins Pereira
-# # \authors Miriã Rafante Bernardino
-# # \authors Ramon Pires
-
 from RankAggregation import RankAggregation
+
 
 ##  The RA_MedianRank class handles a Median algorithm for Rank Aggregation.
 #   This class inherits from the RankAggregation class, and implements the rank() function. 

@@ -1,14 +1,8 @@
 # -*- coding: utf-8 -*- #
 
-# # \authors Diego Chávez Escalante 
-# # \authors Jael Louis Zela Ruiz
-# # \authors Kelly Lopes
-# # \authors Luís Augusto Martins Pereira
-# # \authors Miriã Rafante Bernardino
-# # \authors Ramon Pires
-
 import math
 from RankAggregation import RankAggregation
+
 
 ##  The RA_Footrule class handles the Footrule method for Rank Aggregation.
 #   This class inherits from the RankAggregation class, and implements the rank() function. 
