@@ -1,15 +1,7 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 
-# # \authors Diego Chávez Escalante 
-# # \authors Jael Louis Zela Ruiz
-# # \authors Kelly Lopes
-# # \authors Luís Augusto Martins Pereira
-# # \authors Miriã Rafante Bernardino
-# # \authors Ramon Pires
-
 from RankAggregation import RankAggregation
-import  operator
+import operator
 
 ##  The RA_CombSUM class handles the CombSUM algorithm for Rank Aggregation.
 #   This class inherits from the RankAggregation class, and implements the rank() function. 
@@ -21,7 +13,7 @@ class RA_CombSUM(RankAggregation):
 	#  The rank function uses the CombSUM algorithm to compute a new ranked list for the query object.
 	#  \param tp_param The CombSUM algorithm does not use any hyper-parameter.
 	#  \return A ranked list with the same structure as the ls_data attribute (a list of dictionaries, each dictionary with three keys ('sim','id','rank')).
-	def rank(self,*tp_param):
+	def rank(self, *tp_param):
 		
 		int_tam=len(self.ls_data[0]);
 		int_rnk=len(self.ls_data);

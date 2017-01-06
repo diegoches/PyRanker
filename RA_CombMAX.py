@@ -1,15 +1,7 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 
-# # \authors Diego Chávez Escalante 
-# # \authors Jael Louis Zela Ruiz
-# # \authors Kelly Lopes
-# # \authors Luís Augusto Martins Pereira
-# # \authors Miriã Rafante Bernardino
-# # \authors Ramon Pires
-
 from RankAggregation import RankAggregation
-import  operator
+import operator
 
 ##  The RA_CombMAX class handles the CombMAX algorithm for Rank Aggregation.
 #   This class inherits from the RankAggregation class, and implements the rank() function. 
@@ -40,7 +32,8 @@ class RA_CombMAX(RankAggregation):
 						dc_tmp[str_name]=flo_sim;
 		
 		# Orders a list of the objects by its new similarity.
-		ls_sor=sorted(dc_tmp.iteritems(),key=operator.itemgetter(1),reverse=True);
+		ls_sor = sorted(dc_tmp.iteritems(), key=operator.itemgetter(1),
+						reverse=True);
 		
 		ls_ra=[];
 		

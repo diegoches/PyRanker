@@ -1,15 +1,7 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 
-# # \authors Diego Chávez Escalante 
-# # \authors Jael Louis Zela Ruiz
-# # \authors Kelly Lopes
-# # \authors Luís Augusto Martins Pereira
-# # \authors Miriã Rafante Bernardino
-# # \authors Ramon Pires
-
 from RankAggregation import RankAggregation
-import  operator
+import operator
 
 ##  The RA_CombANZ class handles the CombANZ algorithm for Rank Aggregation.
 #   This class inherits from the RankAggregation class, and implements the rank() function. 
@@ -61,9 +53,4 @@ class RA_CombANZ(RankAggregation):
 			dc_tp={'sim':ls_sor[i][1],'id':ls_sor[i][0],'rank':i+1}
 			ls_ra.append(dc_tp);
 		
-		return ls_ra;	
-
-	
-
-
-
+		return ls_ra;
