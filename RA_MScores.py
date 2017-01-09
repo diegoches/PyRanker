@@ -1,12 +1,4 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*- #
-
-# # \authors Diego Chávez Escalante 
-# # \authors Jael Louis Zela Ruiz
-# # \authors Kelly Lopes
-# # \authors Luís Augusto Martins Pereira
-# # \authors Miriã Rafante Bernardino
-# # \authors Ramon Pires
 
 from RankAggregation import RankAggregation
 import math

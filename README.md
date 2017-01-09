@@ -2,7 +2,7 @@
 
 # Original Authors:
 
-- Diego Chávez Escalante
+- Diego Chavez Escalante
 - Jael Louis Zela Ruiz
 - Kelly Lopes
 - Luís Augusto Martins Pereira
