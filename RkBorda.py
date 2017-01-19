@@ -25,7 +25,7 @@ class RkBorda(RankAggregation):
             dc_map.update({dc_i.get('id'): dc_i.get('rank')})
 
         # Computes Borda count.
-        for i in range(1, self.int_numRanks):
+        for i in range(1, self.int_num_ranks):
             for dc_i in self.ls_data[i]:
                 dc_map[dc_i.get('id')] += dc_i.get('rank')
 

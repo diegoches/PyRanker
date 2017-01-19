@@ -20,13 +20,13 @@ class RkMedianRank(RankAggregation):
     def rank(self, *tp_param):
 
         # define median type function
-        if self.int_numRanks % 2 == 0:  # even
+        if self.int_num_ranks % 2 == 0:  # even
             func_median = self.__even
-            self.median_index1 = (self.int_numRanks / 2) - 1
+            self.median_index1 = (self.int_num_ranks / 2) - 1
             self.median_index2 = self.median_index1 + 1
         else:  # odd
             func_median = self.__odd
-            self.median_index = ((self.int_numRanks + 1) / 2) - 1
+            self.median_index = ((self.int_num_ranks + 1) / 2) - 1
 
         dc_map = {}
 
@@ -35,7 +35,7 @@ class RkMedianRank(RankAggregation):
             dc_map.update({dc_i.get('id'): [dc_i.get('rank')]})
 
         # Add positons of others ranked lists
-        for i in range(1, self.int_numRanks):
+        for i in range(1, self.int_num_ranks):
             for dc_i in self.ls_data[i]:
                 dc_map[dc_i.get('id')].append(dc_i.get('rank'))
 

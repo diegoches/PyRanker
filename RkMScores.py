@@ -31,15 +31,15 @@ class RkMScores(RankAggregation):
             dc_map.update({dc_i.get('id'): (dc_i.get('sim') + 1)})
 
         # Multiplication scores
-        for i in range(1, self.int_numRanks):
+        for i in range(1, self.int_num_ranks):
             for dc_i in self.ls_data[i]:
                 dc_map[dc_i.get('id')] *= dc_i.get('sim') + 1
 
         # m root of scores
         for str_id in dc_map.iterkeys():
             dc_map[str_id] = math.pow(dc_map[str_id],
-                                      1.0 / self.int_numRanks) / float(
-                self.int_numRanks)
+                                      1.0 / self.int_num_ranks) / float(
+                self.int_num_ranks)
 
         max_count = max(dc_map.values())
 

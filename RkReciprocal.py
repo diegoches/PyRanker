@@ -34,7 +34,7 @@ class RkReciprocal(RankAggregation):
             dc_map.update({dc_i.get('id'):1.0/(tp_param + dc_i.get('rank'))})
             
         # Computes RRF count
-        for i in range(1, self.int_numRanks):
+        for i in range(1, self.int_num_ranks):
             for dc_i in self.ls_data[i]:
                 dc_map[dc_i.get('id')] += 1.0/(tp_param + dc_i.get('rank')) 
                 

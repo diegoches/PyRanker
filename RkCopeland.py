@@ -38,7 +38,7 @@ class RkCopeland(RankAggregation):
                 matrix[dc_i.get("rank")-1][int_column] += 1
 
         # Compute the comparisons for the others ranked list
-        for int_i in range(1, self.int_numRanks):
+        for int_i in range(1, self.int_num_ranks):
             ls_winners = []
             for dc_i in self.ls_data[int_i]:
                 int_row = dc_data.get(dc_i.get("id")) - 1
@@ -51,7 +51,7 @@ class RkCopeland(RankAggregation):
         ls_pontos = [0] * int_size
         for int_row in range(int_size):
             for int_column in range(int_row+1, int_size):
-                if matrix[int_row][int_column] > self.int_numRanks/2.0:
+                if matrix[int_row][int_column] > self.int_num_ranks/2.0:
                     ls_pontos[int_row] += 1
                 else:
                     ls_pontos[int_column] += 1

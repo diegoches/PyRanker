@@ -3,7 +3,7 @@
 
 # The RankAggregation class is a built-in type that works as a general 
 # interface for all rank aggregation algorithms.
-# The  RankAggregation class has two attributes. The ranked lists and the 
+# The RankAggregation class has two attributes. The ranked lists and the
 # number of ranked lists.  
 # Every Rank Aggregation method has to inheritance this class and implements 
 # the rank(self, ls_param) function.  
@@ -23,7 +23,7 @@ class RankAggregation:
     def __init__(self):
         
         self.ls_data = []
-        self.int_numRanks = 0
+        self.int_num_ranks = 0
     
     # \fn __del__
     # This is just the class destructor.
@@ -47,7 +47,7 @@ class RankAggregation:
     # \param file_names is a list of ranked list's paths.
     def load_data(self, file_names):
         
-        self.int_numRanks = len(file_names)
+        self.int_num_ranks = len(file_names)
         
         for f_name in file_names:
             try:
@@ -97,7 +97,7 @@ class RankAggregation:
         
         ls_itrsec = self.__list_id(self.ls_data[0])
         
-        for i in range(1, self.int_numRanks): 
+        for i in range(1, self.int_num_ranks):
             ls_tmp = self.__list_id(self.ls_data[i])                
             ls_itrsec = list(set(ls_itrsec).intersection(ls_tmp))
         
@@ -110,7 +110,7 @@ class RankAggregation:
         
         ls_union = self.__list_id(self.ls_data[0])
         
-        for i in range(1, self.int_numRanks): 
+        for i in range(1, self.int_num_ranks):
             ls_tmp = self.__list_id(self.ls_data[i])                
             ls_union = list(set(ls_union).union(ls_tmp))
         
@@ -124,7 +124,7 @@ class RankAggregation:
     def __resize_data(self, flo_perc):
         
         self.size = int(round(len(self.ls_data[0]) * flo_perc))
-        for i in range(self.int_numRanks):
+        for i in range(self.int_num_ranks):
             self.ls_data[i] = self.ls_data[i][:self.size]
             
     # \fn set_percentage_intersection
@@ -144,7 +144,7 @@ class RankAggregation:
                 raise Exception("There is not intersection between "
                                 "the ranked lists with this percentage.")
             
-            for i in range(self.int_numRanks):
+            for i in range(self.int_num_ranks):
                 current_list_id = self.__list_id(self.ls_data[i])
                 ls_id = list(set(current_list_id).difference(ls_itrsec))
                 ls_tmp = self.ls_data[i] 
@@ -180,7 +180,7 @@ class RankAggregation:
             self.__resize_data(flo_perc)
             ls_union = self.__union_id()
             
-            for i in range(self.int_numRanks):
+            for i in range(self.int_num_ranks):
                 current_list_id = self.__list_id(self.ls_data[i])
                 ls_id = list(set(ls_union).difference(current_list_id))
 
