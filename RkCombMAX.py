@@ -25,8 +25,8 @@ class RkCombMAX(RankAggregation):
         dc_tmp = {}
         
         # Get the maximum similarity for each object.
-        for i in range(0,int_rnk):
-            for j in range(0,int_tam):
+        for i in range(0, int_rnk):
+            for j in range(0, int_tam):
                 str_name = self.ls_data[i][j].get('id')
                 flo_sim = self.ls_data[i][j].get('sim')
                 if not dc_tmp.has_key(str_name):
