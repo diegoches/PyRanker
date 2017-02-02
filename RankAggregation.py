@@ -67,6 +67,9 @@ class RankAggregation:
                 int_n += 1
                 
             self.ls_data.append(tmp_list)
+
+    def load_data_from_file(self, file_names, **kwargs):
+        passs
         
     # \fn rank
     # This function is the one that accomplish the Rank Aggregation algorithm.
