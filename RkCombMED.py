@@ -27,8 +27,8 @@ class RkCombMED(RankAggregation):
 
         # Sums the similarities of each object in a dictionary where each
         # key is the id of each object.
-        for i in range(0, int_rnk):
-            for j in range(0, int_tam):
+        for i in xrange(0, int_rnk):
+            for j in xrange(0, int_tam):
                 str_name = self.ls_data[i][j].get('id')
                 flo_sim = self.ls_data[i][j].get('sim')
                 if str_name not in dc_tmp:
@@ -47,7 +47,7 @@ class RkCombMED(RankAggregation):
         ls_ra = []
 
         # Maps the new rank in the output format.
-        for i in range(0, int_tam):
+        for i in xrange(0, int_tam):
             dc_tp = {'sim': ls_sor[i][1], 'id': ls_sor[i][0], 'rank': i + 1}
             ls_ra.append(dc_tp)
 

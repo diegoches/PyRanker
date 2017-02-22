@@ -25,7 +25,7 @@ class RkBorda(RankAggregation):
             dc_map.update({dc_i.get('id'): dc_i.get('rank')})
 
         # Computes Borda count.
-        for i in range(1, self.int_num_ranks):
+        for i in xrange(1, self.int_num_ranks):
             for dc_i in self.ls_data[i]:
                 dc_map[dc_i.get('id')] += dc_i.get('rank')
 
@@ -37,7 +37,7 @@ class RkBorda(RankAggregation):
         ls_final_rank = []
 
         # The new similarity is the normalized Borda count.
-        for i in range(len(dc_map)):
+        for i in xrange(len(dc_map)):
             final_count = 1 - dc_map[i][1] / float(max_count)
             ls_final_rank.append({'id': dc_map[i][0],
                                  'rank': i + 1, 'sim': final_count})

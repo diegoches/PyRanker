@@ -69,7 +69,7 @@ class RankAggregation:
             self.ls_data.append(tmp_list)
 
     def load_data_from_file(self, file_names, **kwargs):
-        passs
+        pass
         
     # \fn rank
     # This function is the one that accomplish the Rank Aggregation algorithm.
@@ -100,7 +100,7 @@ class RankAggregation:
         
         ls_itrsec = self.__list_id(self.ls_data[0])
         
-        for i in range(1, self.int_num_ranks):
+        for i in xrange(1, self.int_num_ranks):
             ls_tmp = self.__list_id(self.ls_data[i])                
             ls_itrsec = list(set(ls_itrsec).intersection(ls_tmp))
         
@@ -113,7 +113,7 @@ class RankAggregation:
         
         ls_union = self.__list_id(self.ls_data[0])
         
-        for i in range(1, self.int_num_ranks):
+        for i in xrange(1, self.int_num_ranks):
             ls_tmp = self.__list_id(self.ls_data[i])                
             ls_union = list(set(ls_union).union(ls_tmp))
         
@@ -127,7 +127,7 @@ class RankAggregation:
     def __resize_data(self, flo_perc):
         
         self.size = int(round(len(self.ls_data[0]) * flo_perc))
-        for i in range(self.int_num_ranks):
+        for i in xrange(self.int_num_ranks):
             self.ls_data[i] = self.ls_data[i][:self.size]
             
     # \fn set_percentage_intersection
@@ -147,7 +147,7 @@ class RankAggregation:
                 raise Exception("There is not intersection between "
                                 "the ranked lists with this percentage.")
             
-            for i in range(self.int_num_ranks):
+            for i in xrange(self.int_num_ranks):
                 current_list_id = self.__list_id(self.ls_data[i])
                 ls_id = list(set(current_list_id).difference(ls_itrsec))
                 ls_tmp = self.ls_data[i] 
@@ -183,7 +183,7 @@ class RankAggregation:
             self.__resize_data(flo_perc)
             ls_union = self.__union_id()
             
-            for i in range(self.int_num_ranks):
+            for i in xrange(self.int_num_ranks):
                 current_list_id = self.__list_id(self.ls_data[i])
                 ls_id = list(set(ls_union).difference(current_list_id))
 
