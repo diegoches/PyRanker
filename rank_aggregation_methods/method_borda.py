@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*- #
 
-from RankAggregation import RankAggregation
+from rank_aggregation import RankAggregation
 
 
 # The RA_Borda class handles the Borda algorithm for Rank Aggregation.

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*- #
 
 import math
-from RankAggregation import RankAggregation
+from rank_aggregation import RankAggregation
 
 
 # The RA_Footrule class handles the Footrule method for Rank Aggregation.

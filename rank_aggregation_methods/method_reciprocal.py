@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*- #
 
-from RankAggregation import RankAggregation
+from rank_aggregation import RankAggregation
 
 
 # The RA_Reciprocal class handles the Reciprocal Rank Fusion algorithm for 

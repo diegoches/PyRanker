@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*- #
 
-from RankAggregation import RankAggregation
+from rank_aggregation import RankAggregation
 import operator
 
 
