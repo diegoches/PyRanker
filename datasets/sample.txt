@@ -1,0 +1,3 @@
+0.8 Juan
+0.7 Pedro
+0.69 Jaime

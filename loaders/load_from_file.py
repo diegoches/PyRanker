@@ -7,5 +7,12 @@ class LoadFromFile(object):
 
     @classmethod
     def load_single_file(cls, file_name):
-        pass
-
+        try:
+            file_iterator = (x for x in open(file_name))
+        except IOError as e:
+            print 'Error: can\'t find file or read data'
+            print e
+            exit(1)
+        else:
+            for line in file_iterator:
+                print line
