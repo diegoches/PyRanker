@@ -14,5 +14,12 @@ class LoadFromFile(object):
             print e
             exit(1)
         else:
+            order = 1
             for line in file_iterator:
-                print line
+                splitted_line = line.split()
+                current_similitude = float(splitted_line[0])
+                current_id = splitted_line[1]
+                print current_similitude
+                print current_id
+                print order
+                order += 1
