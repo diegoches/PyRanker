@@ -11,4 +11,3 @@ class Rank(object):
             self.rank.append(rank_element)
         else:
             raise TypeError('rank_element is not of RankElement class')
-
