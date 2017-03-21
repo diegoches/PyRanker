@@ -23,3 +23,4 @@ class LoadFromFile(object):
                 print current_id
                 print order
                 order += 1
+

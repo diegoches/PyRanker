@@ -4,3 +4,8 @@ class RankElement(object):
         self.similitude = similitude
         self.id = element_id
         self.rank = rank_order
+
+    def __str__(self):
+        str = '{rank}: {id}|{similitude}'
+        return str.format(rank=self.rank, id=self.id,
+                          similitude=self.similitude)

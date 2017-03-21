@@ -12,6 +12,3 @@ class Rank(object):
         else:
             raise TypeError('rank_element is not of RankElement class')
 
-    def remove_object(self):
-        pass
-     
