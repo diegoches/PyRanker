@@ -1,2 +1,6 @@
 .idea/workspace.xml
 vcs.xml
+*.pyc
+PyRanker.iml
+.idea/*
+

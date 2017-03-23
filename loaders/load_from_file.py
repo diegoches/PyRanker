@@ -1,3 +1,5 @@
+from rank_structures.rank_element import RankElement
+
 
 class LoadFromFile(object):
     __positions = {
@@ -19,8 +21,6 @@ class LoadFromFile(object):
                 splitted_line = line.split()
                 current_similitude = float(splitted_line[0])
                 current_id = splitted_line[1]
-                print current_similitude
-                print current_id
-                print order
+                current_rank_element = RankElement(current_similitude, current_id, order)
+                print current_rank_element
                 order += 1
-

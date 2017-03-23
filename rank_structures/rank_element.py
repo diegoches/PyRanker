@@ -6,6 +6,6 @@ class RankElement(object):
         self.rank = rank_order
 
     def __str__(self):
-        str = '{rank}: {id}|{similitude}'
+        str = '{rank}:{id}|{similitude}'
         return str.format(rank=self.rank, id=self.id,
                           similitude=self.similitude)
