@@ -1,3 +1,4 @@
+from rank_structures.aggregated_rank import AggregatedRank
 from rank_structures.rank_element import RankElement
 from rank_structures.rank import Rank
 
@@ -12,11 +13,6 @@ class LoadFromFile(object):
     def load_single_file(cls, file_name):
         try:
             file_iterator = (x for x in open(file_name))
-        except IOError as e:
-            print 'Error: can\'t find file or read data'
-            print e
-            exit(1)
-        else:
             order = 1
             current_rank = Rank()
             for line in file_iterator:
@@ -28,3 +24,24 @@ class LoadFromFile(object):
                 current_rank.add_element(current_rank_element)
                 order += 1
             return current_rank
+        except IOError as e:
+            print 'Error: can\'t find file or read data'
+            print e
+            exit(1)
+        except TypeError as e:
+            print 'Error: can\'t load data correctly'
+            print e
+            exit(1)
+
+    @classmethod
+    def load_ranks(cls, file_list):
+        try:
+            aggregated_rank = AggregatedRank()
+            for file in file_list:
+                current_rank = cls.load_single_file(file)
+                aggregated_rank.add_rank(current_rank)
+            return aggregated_rank
+        except TypeError as e:
+            print 'Error: can\'t load data correctly'
+            print e
+            exit(1)
