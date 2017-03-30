@@ -7,7 +7,11 @@ class Rank(object):
         self.rank = []
 
     def __str__(self):
-        return self.rank.__str__()
+        rank_as_string = ''
+        for e in self.rank:
+            rank_as_string += str(e) + '\n'
+
+        return rank_as_string
 
     def add_element(self, rank_element):
         if isinstance(rank_element, RankElement):

@@ -8,9 +8,14 @@ class AggregatedRank(object):
         self.rank_quantity = 0
 
     def __str__(self):
-        str_result = 'quantity: {quantity} \nranks: {ranks}'
+        str_result = 'Quantity: {quantity} \n\nRanks:\n\n{ranks}'
+        rank_list_as_string = ''
+        i = 1
+        for l in self.rank_list:
+            rank_list_as_string += '- Rank ' + str(i) + ':\n' + str(l) + '\n'
+            i += 1
         return str_result.format(quantity=self.rank_quantity,
-                                 ranks=self.rank_list)
+                                 ranks=rank_list_as_string)
 
     def add_rank(self, rank):
         if isinstance(rank, Rank):
