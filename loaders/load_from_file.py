@@ -1,4 +1,4 @@
-from rank_structures.aggregated_rank import AggregatedRank
+from rank_structures.rank_list import RankList
 from rank_structures.rank_element import RankElement
 from rank_structures.rank import Rank
 
@@ -36,11 +36,11 @@ class LoadFromFile(object):
     @classmethod
     def load_ranks(cls, file_list):
         try:
-            aggregated_rank = AggregatedRank()
+            rank_list = RankList()
             for file in file_list:
                 current_rank = cls.load_single_file(file)
-                aggregated_rank.add_rank(current_rank)
-            return aggregated_rank
+                rank_list.add_rank(current_rank)
+            return rank_list
         except TypeError as e:
             print 'Error: can\'t load data correctly'
             print e

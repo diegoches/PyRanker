@@ -1,7 +1,7 @@
 from rank_structures.rank import Rank
 
 
-class AggregatedRank(object):
+class RankList(object):
 
     def __init__(self):
         self.rank_list = []
