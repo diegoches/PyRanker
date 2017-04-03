@@ -32,9 +32,7 @@ class RankCombMed(RankAggregation):
         for k, v in temporal_dictionary.items():
             temporal_dictionary[k] = v/ranks_quantity
 
-        list_of_aggregated_rank = \
-            sorted(temporal_dictionary.iteritems(),
-                   key=operator.itemgetter(1), reverse=True)
+        self.aggregated_rank.add_dictionary(temporal_dictionary)
 
         # --------------------------------------------------------------------
 

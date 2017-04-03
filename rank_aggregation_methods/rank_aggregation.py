@@ -10,6 +10,9 @@ class RankAggregation(object):
         self.rank_list = RankList()
         self.aggregated_rank = Rank()
 
+    def load_rank_list(self, rank_list):
+        self.rank_list = rank_list
+
     # \fn rank
     # This function is the one that accomplish the Rank Aggregation algorithm.
     # It has to be implemented by all the classes that inherit from this class.
