@@ -11,15 +11,19 @@ import operator
 # each ranked list by the number of non zero similarities of each object,
 # and then it order them in descending order.
 # \cite Fox:1994 .
-class RkCombMNZ(RankAggregation):
+class RankCombMNZ(RankAggregation):
     # \fn rank
     # The rank function uses the CombMNZ algorithm to compute a new
     # ranked list for the query object.
     # \param tp_param The CombMNZ algorithm does not use any hyper-parameter.
     # \return A ranked list with the same structure as the ls_data attribute
-    # (a list of dictionaries, each dictionary with three keys
-    # ('sim','id','rank')).
     def rank(self, *tp_param):
+
+        temporal_dictionary = {}
+        for current_rank in self.rank_list.ranks:
+            for element in current_rank.rank:
+                pass
+        # ---------------
 
         int_tam = len(self.ls_data[0])
         int_rnk = len(self.ls_data)
