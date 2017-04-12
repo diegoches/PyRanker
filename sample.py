@@ -3,6 +3,7 @@ from rank_aggregation_methods.method_comb_max import RankCombMAX
 from rank_aggregation_methods.method_comb_med import RankCombMED
 from rank_aggregation_methods.method_comb_min import RankCombMIN
 from rank_aggregation_methods.method_comb_mnz import RankCombMNZ
+from rank_aggregation_methods.method_comb_sum import RankCombSUM
 
 
 def main():
@@ -25,6 +26,10 @@ def main():
     print rm.rank()
     print '----'
     rm = RankCombMNZ()
+    rm.load_rank_list(rl)
+    print rm.rank()
+    print '----'
+    rm = RankCombSUM()
     rm.load_rank_list(rl)
     print rm.rank()
     print '****'
