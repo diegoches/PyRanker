@@ -1,4 +1,5 @@
 from loaders.load_from_file import LoadFromFile
+from rank_aggregation_methods.method_comb_anz import RankCombANZ
 from rank_aggregation_methods.method_comb_max import RankCombMAX
 from rank_aggregation_methods.method_comb_med import RankCombMED
 from rank_aggregation_methods.method_comb_min import RankCombMIN
@@ -13,23 +14,28 @@ def main():
     rl = LoadFromFile.load_ranks(datasets)
     # print rl
 
+    print '--RankCombMED--'
     ra = RankCombMED()
     ra.load_rank_list(rl)
     print ra.rank()
-    print '----'
+    print '--RankCombMIN--'
     rm = RankCombMIN()
     rm.load_rank_list(rl)
     print rm.rank()
-    print '----'
+    print '--RankCombMAX--'
     rm = RankCombMAX()
     rm.load_rank_list(rl)
     print rm.rank()
-    print '----'
+    print '--RankCombMNZ--'
     rm = RankCombMNZ()
     rm.load_rank_list(rl)
     print rm.rank()
-    print '----'
+    print '--RankCombSUM--'
     rm = RankCombSUM()
+    rm.load_rank_list(rl)
+    print rm.rank()
+    print '--RankCombANZ--'
+    rm = RankCombANZ()
     rm.load_rank_list(rl)
     print rm.rank()
     print '****'
