@@ -17,8 +17,6 @@ class RkFootrule(RankAggregation):
     # \param tp_param Represent a value N, where N indicates that we are
     # interested in the first N elements in the final rank (top-N).
     # \return A ranked list with the same structure as the ls_data attribute
-    # (a list of dictionaries, each dictionary with three keys
-    # ('sim','id','rank')).
     def rank(self, *tp_param):
         ls_final_rank = []
         aux_dict = dict()
