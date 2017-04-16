@@ -14,6 +14,9 @@ class Rank(object):
 
         return rank_as_string
 
+    def __len__(self):
+        return len(self.rank)
+
     def add_element(self, rank_element):
         if isinstance(rank_element, RankElement):
             self.rank.append(rank_element)

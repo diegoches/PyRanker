@@ -5,12 +5,13 @@ from rank_aggregation_methods.method_comb_med import RankCombMED
 from rank_aggregation_methods.method_comb_min import RankCombMIN
 from rank_aggregation_methods.method_comb_mnz import RankCombMNZ
 from rank_aggregation_methods.method_comb_sum import RankCombSUM
+from rank_aggregation_methods.method_footrule import RankFootrule
 
 
 def main():
 
     print 'Hello Rank Aggregation'
-    datasets = ['datasets/sample_1.txt', 'datasets/sample_2.txt']
+    datasets = ['datasets/sample_1.txt', 'datasets/sample_2.txt', 'datasets/sample_3.txt']
     rl = LoadFromFile.load_ranks(datasets)
     # print rl
 
@@ -36,6 +37,10 @@ def main():
     print rm.rank()
     print '--RankCombANZ--'
     rm = RankCombANZ()
+    rm.load_rank_list(rl)
+    print rm.rank()
+    print '--RankFootrule--'
+    rm = RankFootrule()
     rm.load_rank_list(rl)
     print rm.rank()
     print '****'
