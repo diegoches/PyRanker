@@ -13,7 +13,7 @@ import numpy as np
 # pairwise comparisons are made, the candidate with the most points
 # (the most pairwise wins) is declared the winner.
 # \cite Lippman:2012 .
-class RkCopeland(RankAggregation):
+class RankCopeland(RankAggregation):
 
     # \fn rank
     # The rank function uses the Copeland algorithm to compute a new

@@ -9,7 +9,7 @@ from rank_aggregation import RankAggregation
 # The Median algorithm finds the median of the positions from each object in
 # each ranked list, and then it order them in ascending order.
 # \cite Fagin:2003 .
-class RkMedianRank(RankAggregation):
+class RankMedianRank(RankAggregation):
     # \fn rank
     # The rank function uses a Median algorithm to compute a new ranked list
     # for the query object.

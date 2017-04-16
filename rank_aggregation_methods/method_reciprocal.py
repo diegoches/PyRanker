@@ -12,7 +12,7 @@ from rank_aggregation import RankAggregation
 # It uses the rank information for computing a similarity score between 
 # the query object and another one.
 # \cite Cormack:2009 . 
-class RkReciprocal(RankAggregation):
+class RankReciprocal(RankAggregation):
 
     # \fn rank 
     # The rank function uses the RRF algorithm to compute a new ranked 

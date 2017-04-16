@@ -10,7 +10,7 @@ from rank_aggregation import RankAggregation
 # The Footrule Optimal Aggregation algorithm is a good approximation of the
 # Kemeny optimal aggregation, that can be computed in polynomial time.
 # \cite Dwork:2001 .
-class RkFootrule(RankAggregation):
+class RankFootrule(RankAggregation):
     # \fn rank
     # The rank function uses the Footrule Optimal Aggregation algorithm to
     # compute a new ranked list for the query object.

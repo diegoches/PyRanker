@@ -9,7 +9,7 @@ from rank_aggregation import RankAggregation
 # The Borda algorithm sums for each object its currents positions in each 
 # ranked list, and then it order them in ascending order.
 # \cite Young:74 .
-class RkBorda(RankAggregation):
+class RankBorda(RankAggregation):
     # The rank function uses the Borda algorithm to compute a new ranked
     # list for the query object.
     # \param tp_param The Borda algorithm does not use any hyper-parameter.

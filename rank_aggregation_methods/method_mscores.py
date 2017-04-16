@@ -13,7 +13,7 @@ import math
 # high aggregated values. The similarity multiplication can be seen as the
 # computation of the probability of two objects be similar.
 # \cite Pedronette:14 .
-class RkMScores(RankAggregation):
+class RankMScores(RankAggregation):
     # \fn rank
     # The rank function uses the Multiplication Scores algorithm to compute a
     # new ranked list for the query object.
