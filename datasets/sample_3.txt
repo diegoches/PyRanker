@@ -5,3 +5,4 @@
 0.51 Joffrey
 0.50 Rollo
 0.45 Ramsay
+0.30 Vardy

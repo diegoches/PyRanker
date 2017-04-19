@@ -3,5 +3,6 @@
 0.69 Jaime
 0.5 Rollo
 0.4 Mercia
+0.35 Vardy
 0.32 Joffrey
 0.12 Ramsay

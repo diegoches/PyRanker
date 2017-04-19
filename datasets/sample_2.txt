@@ -1,5 +1,6 @@
 0.99 Pedro
 0.97 Ragnar
+0.75 Vardy
 0.5 Mercia
 0.45 Joffrey
 0.44 Jaime
