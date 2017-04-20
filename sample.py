@@ -10,7 +10,6 @@ from rank_aggregation_methods.method_footrule import RankFootrule
 
 def main():
 
-    print 'Hello Rank Aggregation'
     datasets = ['datasets/sample_1.txt', 'datasets/sample_2.txt', 'datasets/sample_3.txt']
     rl = LoadFromFile.load_ranks(datasets)
     # print rl
