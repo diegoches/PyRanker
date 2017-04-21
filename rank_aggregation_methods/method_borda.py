@@ -18,6 +18,20 @@ class RankBorda(RankAggregation):
     # keys ('sim','id','rank')).
     def rank(self, *tp_param):
 
+        dict_mapper = {}
+
+        for e in self.rank_list.ranks[0].rank:
+            dict_mapper[e.id] = e.rank
+
+        for i in xrange(1, self.rank_list.ranks_quantity):
+            for re in self.rank_list.ranks[i].rank:
+                dict_mapper[re.id] += re.rank
+
+        
+
+
+        # -------------
+
         dc_map = {}
 
         # initialize map of ranks from first ranked list.
