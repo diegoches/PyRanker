@@ -1,4 +1,5 @@
 from loaders.load_from_file import LoadFromFile
+from rank_aggregation_methods.method_borda import RankBorda
 from rank_aggregation_methods.method_comb_anz import RankCombANZ
 from rank_aggregation_methods.method_comb_max import RankCombMAX
 from rank_aggregation_methods.method_comb_med import RankCombMED
@@ -40,6 +41,10 @@ def main():
     print rm.rank()
     print '--RankFootrule--'
     rm = RankFootrule()
+    rm.load_rank_list(rl)
+    print rm.rank()
+    print '--RankBorda--'
+    rm = RankBorda()
     rm.load_rank_list(rl)
     print rm.rank()
     print '****'
