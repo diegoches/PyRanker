@@ -20,9 +20,13 @@ class RankMScores(RankAggregation):
     # \param tp_param The Multiplication Scores algorithm does not use any
     # hyper-parameter.
     # \return A ranked list with the same structure as the ls_data attribute
-    # (a list of dictionaries, each dictionary with three keys
-    # ('sim','id','rank')).
     def rank(self, *tp_param):
+
+        dict_mapper = {}
+
+        for e in self.rank_list.ranks[0].rank:
+            dict_mapper[e.id] = e.similitude + 1
+        # ----------------
 
         dc_map = {}
 
