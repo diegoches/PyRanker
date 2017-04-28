@@ -24,19 +24,22 @@ class RankMScores(RankAggregation):
 
         dict_mapper = {}
 
+        # initialize map of similarities from first ranked list
         for e in self.rank_list.ranks[0].rank:
             dict_mapper[e.id] = e.similitude + 1
 
+        # Multiplication scores
         for i in xrange(1, self.rank_list.ranks_quantity):
             for e in self.rank_list.ranks[i].rank:
                 dict_mapper[e.id] *= e.similitude + 1
 
+        # m root of scores
         for k, v in dict_mapper.items():
             dict_mapper[k] = \
                 math.pow(v, 1.0/self.rank_list.ranks_quantity) / float(self.rank_list.ranks_quantity)
 
+        # The new similarity is the normalized scores.
         max_score = max(dict_mapper.values())
-
         for k, v in dict_mapper.items():
             dict_mapper[k] = v / float(max_score)
 
@@ -47,16 +50,16 @@ class RankMScores(RankAggregation):
 
         # dc_map = {}
         #
-        # # initialize map of similarities from first ranked list
+
         # for dc_i in self.ls_data[0]:
         #     dc_map.update({dc_i.get('id'): (dc_i.get('sim') + 1)})
         #
-        # # Multiplication scores
+        #
         # for i in range(1, self.int_num_ranks):
         #     for dc_i in self.ls_data[i]:
         #         dc_map[dc_i.get('id')] *= dc_i.get('sim') + 1
         #
-        # # m root of scores
+        #
         # for str_id in dc_map.iterkeys():
         #     dc_map[str_id] = math.pow(dc_map[str_id],
         #                               1.0 / self.int_num_ranks) / float(
