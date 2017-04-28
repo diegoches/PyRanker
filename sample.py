@@ -7,6 +7,7 @@ from rank_aggregation_methods.method_comb_min import RankCombMIN
 from rank_aggregation_methods.method_comb_mnz import RankCombMNZ
 from rank_aggregation_methods.method_comb_sum import RankCombSUM
 from rank_aggregation_methods.method_footrule import RankFootrule
+from rank_aggregation_methods.method_mscores import RankMScores
 
 
 def main():
@@ -45,6 +46,10 @@ def main():
     print rm.rank()
     print '--RankBorda--'
     rm = RankBorda()
+    rm.load_rank_list(rl)
+    print rm.rank()
+    print '--RankMScores--'
+    rm = RankMScores()
     rm.load_rank_list(rl)
     print rm.rank()
     print '****'
