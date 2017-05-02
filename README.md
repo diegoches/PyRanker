@@ -1,4 +1,5 @@
 # PyRanker
+Rank agreggation library in Python.
 
 # Authors:
 - Diego Chavez Escalante
