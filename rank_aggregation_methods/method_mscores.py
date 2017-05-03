@@ -45,38 +45,3 @@ class RankMScores(RankAggregation):
 
         self.aggregated_rank.add_dictionary((dict_mapper))
         return self.aggregated_rank
-
-        # ----------------
-
-        # dc_map = {}
-        #
-
-        # for dc_i in self.ls_data[0]:
-        #     dc_map.update({dc_i.get('id'): (dc_i.get('sim') + 1)})
-        #
-        #
-        # for i in range(1, self.int_num_ranks):
-        #     for dc_i in self.ls_data[i]:
-        #         dc_map[dc_i.get('id')] *= dc_i.get('sim') + 1
-        #
-        #
-        # for str_id in dc_map.iterkeys():
-        #     dc_map[str_id] = math.pow(dc_map[str_id],
-        #                               1.0 / self.int_num_ranks) / float(
-        #         self.int_num_ranks)
-        #
-        # max_count = max(dc_map.values())
-        #
-        # # Sorting objects by using scores
-        # dc_map = sorted(dc_map.items(), key=lambda dc_map: dc_map[1],
-        #                 reverse=True)
-        #
-        # ls_final_rank = []
-        #
-        # # The new similarity is the normalized scores.
-        # for i in range(len(dc_map)):
-        #     final_count = dc_map[i][1] / float(max_count)
-        #     ls_final_rank.append(
-        #         {'id': dc_map[i][0], 'rank': i + 1, 'sim': final_count})
-        #
-        # return ls_final_rank
