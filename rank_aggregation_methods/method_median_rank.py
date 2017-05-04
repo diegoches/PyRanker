@@ -21,11 +21,11 @@ class RankMedianRank(RankAggregation):
 
         # define median type function
         if self.int_num_ranks % 2 == 0:  # even
-            func_median = self.__even
+            func_median = self.__median_even
             self.median_index1 = (self.int_num_ranks / 2) - 1
             self.median_index2 = self.median_index1 + 1
         else:  # odd
-            func_median = self.__odd
+            func_median = self.__median_odd
             self.median_index = ((self.int_num_ranks + 1) / 2) - 1
 
         dc_map = {}
@@ -62,13 +62,13 @@ class RankMedianRank(RankAggregation):
     # Calculates the median for an odd number of values.
     # \param ls_ranks A list of numbers.
     # \return The median of ls_rank.
-    def __odd(self, ls_ranks):
+    def __median_odd(self, ls_ranks):
         return sorted(ls_ranks)[self.median_index]
 
     # \fn __even
     # Calculates the median for an even number of values.
     # \param ls_ranks A list of numbers.
     # \return The median of ls_rank
-    def __even(self, ls_ranks):
+    def __median_even(self, ls_ranks):
         ls_tmp = sorted(ls_ranks)
         return (ls_tmp[self.median_index1] + ls_tmp[self.median_index2]) / 2.0
