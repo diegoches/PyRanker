@@ -19,6 +19,19 @@ class RankMedianRank(RankAggregation):
     # ('sim','id','rank')).
     def rank(self, *tp_param):
 
+        dict_mapper = {}
+        for e in self.rank_list.ranks[0].rank:
+            dict_mapper[e.id] = [e.rank]
+
+        for i in xrange(1, self.rank_list.ranks_quantity):
+            for e in self.rank_list.ranks[i].rank:
+                dict_mapper[e.id].append(e.rank)
+
+        
+
+
+        # --------------------------------
+
         # define median type function
         if self.int_num_ranks % 2 == 0:  # even
             func_median = self.__median_even
