@@ -27,7 +27,8 @@ class RankMedianRank(RankAggregation):
             for e in self.rank_list.ranks[i].rank:
                 dict_mapper[e.id].append(e.rank)
 
-        
+        # for k,v in dict_mapper.items():
+
 
 
         # --------------------------------
@@ -85,3 +86,18 @@ class RankMedianRank(RankAggregation):
     def __median_even(self, ls_ranks):
         ls_tmp = sorted(ls_ranks)
         return (ls_tmp[self.median_index1] + ls_tmp[self.median_index2]) / 2.0
+
+    def get_median(self, list_of_ranks):
+        list_of_ranks.sort()
+        size = len(list_of_ranks)
+        if size % 2 == 0:
+            index_1 = (size/2) - 1
+            index_2 = index_1 +1
+            median_1 = list_of_ranks[index_1]
+            median_2 = list_of_ranks[index_2]
+            median = (median_1 + median_2) / 2.0
+        else:
+            index = int(size/2)
+            median = list_of_ranks[index]
+        return median
+
