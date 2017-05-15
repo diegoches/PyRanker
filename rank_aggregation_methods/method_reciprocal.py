@@ -20,8 +20,6 @@ class RankReciprocal(RankAggregation):
     # \param tp_param Is a constant that mitigates the impact of high 
     # rankings by outlier systems.
     # \return A ranked list with the same structure as the ls_data attribute 
-    # (a list of dictionaries, each dictionary with three keys 
-    # ('sim','id','rank')).
     def rank(self, tp_param = 60):
         
         if tp_param < 0:
