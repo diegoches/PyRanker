@@ -9,6 +9,7 @@ from rank_aggregation_methods.method_comb_sum import RankCombSUM
 from rank_aggregation_methods.method_footrule import RankFootrule
 from rank_aggregation_methods.method_median_rank import RankMedianRank
 from rank_aggregation_methods.method_mscores import RankMScores
+from rank_aggregation_methods.method_reciprocal import RankReciprocal
 
 
 def main():
@@ -57,6 +58,14 @@ def main():
     rm = RankMedianRank()
     rm.load_rank_list(rl)
     print rm.rank()
+    print '--RankReciprocal 0--'
+    rm = RankReciprocal()
+    rm.load_rank_list(rl)
+    print rm.rank(0)
+    print '--RankReciprocal 1--'
+    rm = RankReciprocal()
+    rm.load_rank_list(rl)
+    print rm.rank(1)
     print '****'
     print rl
 

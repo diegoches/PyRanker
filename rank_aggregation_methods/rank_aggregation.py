@@ -13,6 +13,12 @@ class RankAggregation(object):
     def load_rank_list(self, rank_list):
         self.rank_list = rank_list
 
+    def get_rank_by_index(self, rank_index):
+        return self.rank_list.ranks[rank_index].rank
+
+    def get_ranks_quantity(self):
+        return self.rank_list.ranks_quantity
+
     # \fn rank
     # This function is the one that accomplish the Rank Aggregation algorithm.
     # It has to be implemented by all the classes that inherit from this class.
