@@ -24,14 +24,17 @@ class RankReciprocal(RankAggregation):
         if mitigation < 0:
             raise ValueError('mitigation parameter must be greater than or equal to zero.')
 
+        # Initialize map of ranks from first ranked list
         dict_mapper = {}
         for e in self.get_rank_by_index(0):
             dict_mapper[e.id] = 1.0/(mitigation + e.rank)
 
+        # Computes RRF count
         for i in xrange(1, self.get_ranks_quantity()):
             for e in self.get_rank_by_index(i):
                 dict_mapper[e.id] += 1.0/(mitigation + e.rank)
 
+        # The new similarity is the normalized RRF count.
         max_count = max(dict_mapper.values())
         for k, v in dict_mapper.items():
             dict_mapper[k] = v/float(max_count)
