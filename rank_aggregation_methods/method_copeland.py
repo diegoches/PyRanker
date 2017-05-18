@@ -24,6 +24,12 @@ class RankCopeland(RankAggregation):
     # ('sim','id','rank')).
     def rank(self, *tp_param):
 
+        dict_mapper = {}
+
+
+
+        # ----------------------------------------------------------
+
         dc_data = {}
         int_size = len(self.ls_data[0])
         
