@@ -34,6 +34,15 @@ class RankCopeland(RankAggregation):
             for i in xrange(e.rank, ranks_size):
                 score_matrix[e.rank-1][i] += 1
 
+        for i in xrange(1, self.get_ranks_quantity()):
+            winners_list = []
+            for e in self.get_rank_by_index(i):
+                row = dict_mapper[e.id] - 1
+                for column in xrange(ranks_size):
+                    if column not in winners_list and row != column:
+                        score_matrix[row][column] += 1
+                winners_list.append(row)
+
 
         # ----------------------------------------------------------
 
