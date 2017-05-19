@@ -25,7 +25,14 @@ class RankCopeland(RankAggregation):
     def rank(self, *tp_param):
 
         dict_mapper = {}
+        ranks_size = self.get_ranks_size()
 
+        score_matrix = np.zeros((ranks_size, ranks_size))
+
+        for e in self.get_rank_by_index(0):
+            dict_mapper[e.id] = e.rank
+            for i in xrange(e.rank, ranks_size):
+                score_matrix[e.rank-1][i] += 1
 
 
         # ----------------------------------------------------------
