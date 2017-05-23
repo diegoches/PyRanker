@@ -22,9 +22,14 @@ PyRanker have the following algorithms implemented:
 - CombMNZ
 - CombSUM
 
+# How to Install
+In Linux/MacOS:
+1. Install pip
+2. Within a console, go to the PyRanker project folder.
+3. Run: `pip install -r requirements.txt`
+
 # Authors:
 - Diego Chavez Escalante
-
 
 # Thanks to:
 - Jael Louis Zela Ruiz
