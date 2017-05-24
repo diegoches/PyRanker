@@ -37,6 +37,7 @@ class RankCopeland(RankAggregation):
             for i in xrange(e.rank, ranks_size):
                 score_matrix[e.rank-1][i] += 1
 
+        # Compute the comparisons for the others ranked list
         for i in xrange(1, self.get_ranks_quantity()):
             winners_list = []
             for e in self.get_rank_by_index(i):
