@@ -27,8 +27,11 @@ class RankCopeland(RankAggregation):
         dict_mapper = {}
         ranks_size = self.get_ranks_size()
 
+        # Create the score matrix
         score_matrix = np.zeros((ranks_size, ranks_size))
 
+        # Initialize the score matrix (comparisons) and compute the scores
+        # for the first rank aggregation
         for e in self.get_rank_by_index(0):
             dict_mapper[e.id] = e.rank
             for i in xrange(e.rank, ranks_size):
