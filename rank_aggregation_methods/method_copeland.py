@@ -48,6 +48,16 @@ class RankCopeland(RankAggregation):
                 winners_list.append(row)
 
 
+        # Compute the points for each element according to the score matrix
+        points_list = [0 for a in xrange(ranks_size)]
+        for i in xrange(ranks_size):
+            for j in xrange(i+1, ranks_size):
+                if score_matrix[i][j] > self.get_ranks_quantity()/2.0:
+                    points_list[i] += 1
+                else:
+                    points_list[j] += 1
+
+
         # ----------------------------------------------------------
 
         dc_data = {}
@@ -73,7 +83,7 @@ class RankCopeland(RankAggregation):
                         matrix[int_row][int_column] += 1
                 ls_winners.append(int_row)
         
-        # Compute the points for each element de according to the score matrix
+        # Compute the points for each element according to the score matrix
         ls_pontos = [0] * int_size
         for int_row in range(int_size):
             for int_column in range(int_row+1, int_size):
