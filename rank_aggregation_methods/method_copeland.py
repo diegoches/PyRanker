@@ -57,6 +57,13 @@ class RankCopeland(RankAggregation):
                 else:
                     points_list[j] += 1
 
+        rank_result = []
+        points_max = max(points_list)
+        for i in xrange(ranks_size):
+            # rank_result.append(self)
+            pass
+
+
 
         # ----------------------------------------------------------
 
@@ -118,11 +125,11 @@ class RankCopeland(RankAggregation):
     # \return A floating point number bigger than 0 if the first item is
     # more similar; smaller than 0 if the second is more similar; 0 if both
     # have the same similarity.
-    def __win(self, obj_1, obj_2, ls_rank):
-        int_rank_1 = int_rank_2 = 0
-        for item in ls_rank:
-            if item.get("id") == obj_1.get("id"):
-                int_rank_1 = item.get("rank")
-            elif item.get("id") == obj_2.get("id"):
-                int_rank_2 = item.get("rank")
-        return int_rank_2 - int_rank_1
+    # def __win(self, obj_1, obj_2, ls_rank):
+    #     int_rank_1 = int_rank_2 = 0
+    #     for item in ls_rank:
+    #         if item.get("id") == obj_1.get("id"):
+    #             int_rank_1 = item.get("rank")
+    #         elif item.get("id") == obj_2.get("id"):
+    #             int_rank_2 = item.get("rank")
+    #     return int_rank_2 - int_rank_1
