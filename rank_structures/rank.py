@@ -18,6 +18,9 @@ class Rank(object):
     def __len__(self):
         return len(self.rank)
 
+    def get_element(self, element_index):
+        return self.rank[element_index]
+
     def add_element(self, rank_element):
         if isinstance(rank_element, RankElement):
             self.rank.append(rank_element)
@@ -31,4 +34,9 @@ class Rank(object):
         for i, (k, v) in enumerate(list_of_tuples):
             current_rank_element = RankElement(v, k, i+1)
             self.add_element(current_rank_element)
+
+    def process_rank(self):
+        def helper_sort(x):
+            return x.similitude
+        self.rank.sort(key=helper_sort, reverse=True)
 

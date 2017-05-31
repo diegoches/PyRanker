@@ -24,3 +24,6 @@ class RankList(object):
             self.ranks_quantity += 1
         else:
             raise TypeError('rank is not of Rank class')
+
+    def get_rank(self, rank_index):
+        return self.ranks[rank_index]
