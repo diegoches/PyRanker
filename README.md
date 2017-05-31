@@ -32,6 +32,7 @@ In Linux/MacOS:
 - Diego Chavez Escalante
 
 # Thanks to:
+Special thanks to the original team of PyRanker
 - Jael Louis Zela Ruiz
 - Kelly Lopes
 - Luís Augusto Martins Pereira
