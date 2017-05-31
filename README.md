@@ -28,11 +28,11 @@ In Linux/MacOS:
 2. Within a console, go to the PyRanker project folder.
 3. Run: `pip install -r requirements.txt`
 
-# Authors:
+# Authors
 - Diego Chavez Escalante
 
-# Thanks to:
-Special thanks to the original team of PyRanker
+# Thanks
+Special thanks to the original team of PyRanker:
 - Jael Louis Zela Ruiz
 - Kelly Lopes
 - Luís Augusto Martins Pereira
