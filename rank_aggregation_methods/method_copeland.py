@@ -119,20 +119,3 @@ class RankCopeland(RankAggregation):
 
         # return ls_result
 
-    # \fn __win
-    # The win function returns which object is more similar (better position)
-    # in the ranked list.
-    # \param obj_1 First object to compare.
-    # \param obj_2 Second object to compare.
-    # \param ls_rank Ranked list used to compare the items.
-    # \return A floating point number bigger than 0 if the first item is
-    # more similar; smaller than 0 if the second is more similar; 0 if both
-    # have the same similarity.
-    # def __win(self, obj_1, obj_2, ls_rank):
-    #     int_rank_1 = int_rank_2 = 0
-    #     for item in ls_rank:
-    #         if item.get("id") == obj_1.get("id"):
-    #             int_rank_1 = item.get("rank")
-    #         elif item.get("id") == obj_2.get("id"):
-    #             int_rank_2 = item.get("rank")
-    #     return int_rank_2 - int_rank_1
