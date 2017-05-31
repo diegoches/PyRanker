@@ -57,11 +57,14 @@ class RankCopeland(RankAggregation):
                 else:
                     points_list[j] += 1
 
-        rank_result = []
+        # Build rank aggregated list result and compute the similarity value
+        dict_result = {}
         points_max = max(points_list)
-        for i in xrange(ranks_size):
-            # rank_result.append(self)
-            pass
+        for e, p in zip(self.get_rank_by_index(0), points_list):
+            dict_result[e.id] = p/float(points_max)
+
+        self.aggregated_rank.add_dictionary(dict_result)
+        return self.aggregated_rank
 
 
 

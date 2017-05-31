@@ -6,6 +6,7 @@ from rank_aggregation_methods.method_comb_med import RankCombMED
 from rank_aggregation_methods.method_comb_min import RankCombMIN
 from rank_aggregation_methods.method_comb_mnz import RankCombMNZ
 from rank_aggregation_methods.method_comb_sum import RankCombSUM
+from rank_aggregation_methods.method_copeland import RankCopeland
 from rank_aggregation_methods.method_footrule import RankFootrule
 from rank_aggregation_methods.method_median_rank import RankMedianRank
 from rank_aggregation_methods.method_mscores import RankMScores
@@ -66,6 +67,10 @@ def main():
     rm = RankReciprocal()
     rm.load_rank_list(rl)
     print rm.rank(1)
+    print '--RankCopeland--'
+    rm = RankCopeland()
+    rm.load_rank_list(rl)
+    print rm.rank()
     print '****'
     print rl
 
