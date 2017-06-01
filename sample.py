@@ -13,6 +13,10 @@ from rank_aggregation_methods.method_mscores import RankMScores
 from rank_aggregation_methods.method_reciprocal import RankReciprocal
 
 
+# ----------------------------------------------------------------------------------------------------------------- #
+# This file shows a small example of how to load data using PyRanker, and applying all the Rank Aggregation Methods.
+# ----------------------------------------------------------------------------------------------------------------- #
+
 def main():
 
     datasets = ['datasets/sample_1.txt', 'datasets/sample_2.txt', 'datasets/sample_3.txt']
