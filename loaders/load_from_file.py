@@ -37,8 +37,8 @@ class LoadFromFile(object):
     def load_ranks(cls, file_list):
         try:
             rank_list = RankList()
-            for file in file_list:
-                current_rank = cls.load_single_file(file)
+            for current_file in file_list:
+                current_rank = cls.load_single_file(current_file)
                 rank_list.add_rank(current_rank)
             return rank_list
         except TypeError as e:
