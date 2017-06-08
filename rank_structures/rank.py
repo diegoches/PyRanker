@@ -39,4 +39,6 @@ class Rank(object):
         def helper_sort(x):
             return x.similitude
         self.rank.sort(key=helper_sort, reverse=True)
+        for i, e in enumerate(self.rank):
+            e.rank = i+1
 
