@@ -6,15 +6,18 @@ from rank_structures.rank import Rank
 class LoadFromFile(object):
 
     @classmethod
-    def load_single_file(cls, file_name):
+    def load_single_file(cls, file_name, delimiter=None):
         try:
             file_iterator = (x for x in open(file_name))
             order = 1
             current_rank = Rank()
             for line in file_iterator:
-                splitted_line = line.split()
-                current_similitude = float(splitted_line[0])
-                current_id = splitted_line[1]
+                if delimiter:
+                    split_line = line.split(delimiter)
+                else:
+                    split_line = line.split()
+                current_similitude = float(split_line[0])
+                current_id = split_line[1]
                 current_rank_element = RankElement(current_similitude,
                                                    current_id, order)
                 current_rank.add_element(current_rank_element)

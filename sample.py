@@ -21,7 +21,7 @@ def main():
 
     datasets = ['datasets/sample_1.txt', 'datasets/sample_2.txt', 'datasets/sample_3.txt']
     rl = LoadFromFile.load_ranks(datasets)
-    # print rl
+    print rl
 
     # ra = LoadFromFile.load_single_file('datasets/sample_4.txt')
     # print ra
