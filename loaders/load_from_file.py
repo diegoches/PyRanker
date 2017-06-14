@@ -6,7 +6,30 @@ from rank_structures.rank import Rank
 class LoadFromFile(object):
 
     @classmethod
-    def load_single_file(cls, file_name, delimiter=None):
+    def validate_attributes_order(cls, attributes_order):
+
+        has_correct_3 = 'r' in attributes_order and 's' in attributes_order \
+                        and 'i' in attributes_order
+
+        has_correct_2 = 'i' in attributes_order and \
+                        ('r' in attributes_order or 's' in attributes_order)
+
+        if len(attributes_order) == 3:
+            if has_correct_3:
+                return True
+            else:
+                return False
+        elif len(attributes_order) == 2:
+            if has_correct_2:
+                return True
+            else:
+                return False
+        else:
+            return False
+            
+    @classmethod
+    def load_single_file(cls, file_name, delimiter=None,
+                         attributes_order='sir'):
         try:
             file_iterator = (x for x in open(file_name))
             order = 1
