@@ -26,19 +26,25 @@ class LoadFromFile(object):
                 return False
         else:
             return False
-            
+
     @classmethod
     def load_single_file(cls, file_name, delimiter=None,
                          attributes_order='sir'):
         try:
+            if not cls.validate_attributes_order(attributes_order):
+                raise RuntimeError('Not valid attribute order: {0}'.format(
+                    attributes_order))
+
             file_iterator = (x for x in open(file_name))
             order = 1
             current_rank = Rank()
+
             for line in file_iterator:
                 if delimiter:
                     split_line = line.split(delimiter)
                 else:
                     split_line = line.split()
+                    
                 current_similitude = float(split_line[0])
                 current_id = split_line[1]
                 current_rank_element = RankElement(current_similitude,
