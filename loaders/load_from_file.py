@@ -8,8 +8,7 @@ class LoadFromFile(object):
     @classmethod
     def validate_attributes_order(cls, attributes_order):
 
-        has_correct_3 = 'r' in attributes_order and 's' in attributes_order \
-                        and 'i' in attributes_order
+        has_correct_3 = 's' in attributes_order and 'i' in attributes_order
 
         has_correct_2 = 'i' in attributes_order and \
                         ('r' in attributes_order or 's' in attributes_order)
@@ -28,8 +27,24 @@ class LoadFromFile(object):
             return False
 
     @classmethod
+    def get_rank_values(cls, split_line, attributes_order):
+        current_similitude = None
+        current_id = None
+        current_rank = None
+
+        for i, c in enumerate(attributes_order):
+            if c == 's':
+                current_similitude = float(split_line[i])
+            elif c == 'i':
+                current_id = split_line[i]
+            elif c == 'r':
+                current_rank = split_line[i]
+
+        return current_similitude, current_id, current_rank
+
+    @classmethod
     def load_single_file(cls, file_name, delimiter=None,
-                         attributes_order='sir'):
+                         attributes_order='si'):
         try:
             if not cls.validate_attributes_order(attributes_order):
                 raise RuntimeError('Not valid attribute order: {0}'.format(
@@ -44,11 +59,18 @@ class LoadFromFile(object):
                     split_line = line.split(delimiter)
                 else:
                     split_line = line.split()
-                    
-                current_similitude = float(split_line[0])
-                current_id = split_line[1]
-                current_rank_element = RankElement(current_similitude,
-                                                   current_id, order)
+
+                current_similitude, current_id, current_element_rank = \
+                    cls.get_rank_values(split_line, attributes_order)
+
+                if current_element_rank:
+                    current_rank_element = RankElement(current_similitude,
+                                                       current_id,
+                                                       current_element_rank)
+                else:
+                    current_rank_element = RankElement(current_similitude,
+                                                       current_id, order)
+
                 current_rank.add_element(current_rank_element)
                 order += 1
             return current_rank
