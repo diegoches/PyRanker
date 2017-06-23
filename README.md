@@ -27,3 +27,12 @@ In Linux/MacOS:
 1. Install pip
 2. Within a console, go to the PyRanker project folder.
 3. Run: `pip install -r requirements.txt`
+
+
+# Examples
+- Loading Ranks:
+´´´
+from loaders.load_from_file import LoadFromFile
+datasets = ['datasets/sample_1.txt', 'datasets/sample_2.txt', 'datasets/sample_3.txt']
+rl = LoadFromFile.load_ranks(datasets)
+´´´
