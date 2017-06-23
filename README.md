@@ -31,8 +31,8 @@ In Linux/MacOS:
 
 # Examples
 - Loading Ranks:
-´´´
-from loaders.load_from_file import LoadFromFile
+
+```from loaders.load_from_file import LoadFromFile
 datasets = ['datasets/sample_1.txt', 'datasets/sample_2.txt', 'datasets/sample_3.txt']
 rl = LoadFromFile.load_ranks(datasets)
-´´´
+```
