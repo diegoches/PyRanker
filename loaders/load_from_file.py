@@ -45,6 +45,16 @@ class LoadFromFile(object):
     @classmethod
     def load_single_file(cls, file_name, delimiter=None,
                          attributes_order='si'):
+        """
+        :param file_name: The name of the file that contains one rank of
+        elements.
+        :param delimiter: the delimiter that separates the attributes of each
+        ranked element.
+        :param attributes_order: any combination of the character: 's', 'i' or
+        'r', 'r' can be missed.
+        :return: a Rank() object
+        """
+
         try:
             if not cls.validate_attributes_order(attributes_order):
                 raise RuntimeError('Not valid attribute order: {0}'.format(

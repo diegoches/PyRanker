@@ -23,6 +23,7 @@ def main():
 
     datasets = ['datasets/sample_1.txt', 'datasets/sample_2.txt',
                 'datasets/sample_3.txt']
+
     rl = LoadFromFile.load_ranks(datasets)
     print rl
 
