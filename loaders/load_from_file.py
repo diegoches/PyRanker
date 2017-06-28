@@ -95,6 +95,10 @@ class LoadFromFile(object):
 
     @classmethod
     def load_ranks(cls, file_list):
+        """
+        :param file_list: list of strings that representes the files uris.
+        :return: a RankList() object.
+        """
         try:
             rank_list = RankList()
             for current_file in file_list:
