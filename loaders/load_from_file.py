@@ -8,7 +8,7 @@ class LoadFromFile(object):
     @classmethod
     def validate_attributes_order(cls, attributes_order):
         """
-        :param attributes_order: string of size 2 or 3 that has any combination
+        :param attributes_order: String of size 2 or 3 that has any combination
         of the character: 's', 'i' or 'r', 'r' can be missed.
         :return: Boolean indicating that the attributes_order is ok (True) or
         not (False).
@@ -62,11 +62,11 @@ class LoadFromFile(object):
         """
         :param file_name: The name of the file that contains one rank of
         elements.
-        :param delimiter: the delimiter that separates the attributes of each
+        :param delimiter: The delimiter that separates the attributes of each
         ranked element.
-        :param attributes_order: any combination of the character: 's', 'i' or
+        :param attributes_order: Any combination of the character: 's', 'i' or
         'r', 'r' can be missed.
-        :return: a Rank() object
+        :return: A Rank() object
         """
 
         try:
@@ -110,8 +110,8 @@ class LoadFromFile(object):
     @classmethod
     def load_ranks(cls, file_list):
         """
-        :param file_list: list of strings that representes the files uris.
-        :return: a RankList() object.
+        :param file_list: List of strings that representes the files uris.
+        :return: A RankList() object.
         """
         try:
             rank_list = RankList()
