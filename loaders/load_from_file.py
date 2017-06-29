@@ -7,6 +7,12 @@ class LoadFromFile(object):
 
     @classmethod
     def validate_attributes_order(cls, attributes_order):
+        """
+        :param attributes_order: string of size 2 or 3 that has any combination
+        of the character: 's', 'i' or 'r', 'r' can be missed.
+        :return: Boolean indicating that the attributes_order is ok (True) or
+        not (False).
+        """
 
         has_correct_3 = 's' in attributes_order and 'i' in attributes_order
 
