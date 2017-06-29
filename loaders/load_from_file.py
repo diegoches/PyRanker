@@ -34,6 +34,14 @@ class LoadFromFile(object):
 
     @classmethod
     def get_rank_values(cls, split_line, attributes_order):
+        """
+        :param split_line: A list of strings that represents id, rank and/or
+        similitude.
+        :param attributes_order: The order that describes which element in the
+        split_line correspond to id, rand and/or similitude.
+        :return: A tuple with 3 element, first the similitude, second the id
+        and third the rank.
+        """
         current_similitude = None
         current_id = None
         current_rank = None
