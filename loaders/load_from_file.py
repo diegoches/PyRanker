@@ -110,7 +110,7 @@ class LoadFromFile(object):
     @classmethod
     def load_ranks(cls, file_list):
         """
-        :param file_list: List of strings that representes the files uris.
+        :param file_list: List of strings that represents the files uris.
         :return: A RankList() object.
         """
         try:
