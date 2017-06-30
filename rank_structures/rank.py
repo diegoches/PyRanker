@@ -5,7 +5,7 @@ import operator
 class Rank(object):
 
     def __init__(self):
-        # list of RankElement objects.
+        # list of RankElement() objects.
         self.rank = []
 
     def __str__(self):

@@ -4,8 +4,9 @@ from rank_structures.rank import Rank
 class RankList(object):
 
     def __init__(self):
-        # list of Rank() objects.
+        # List of Rank() objects.
         self.ranks = []
+        # The quantity of Rank() objects that the ranks attribute has.
         self.ranks_quantity = 0
 
     def __str__(self):
