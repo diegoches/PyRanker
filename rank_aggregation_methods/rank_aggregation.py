@@ -14,12 +14,25 @@ class RankAggregation(object):
         self.rank_list = rank_list
 
     def get_rank_by_index(self, rank_index):
+        """
+        :param rank_index: Integer indicating the rank to which you want to
+        have access.
+        :return: List of rank elements representing the rank of the Rank()
+        object.
+        """
         return self.rank_list.ranks[rank_index].rank
 
     def get_ranks_quantity(self):
+        """
+        :return: Integer indicating the ranks quantity in the ranks list.
+        """
         return self.rank_list.ranks_quantity
 
     def get_ranks_size(self):
+        """
+        :return: Integer indicating the size of each rank in the ranks list;
+        in other words, the number of rank elements in each rank.
+        """
         return len(self.rank_list.ranks[0])
 
     # \fn rank
