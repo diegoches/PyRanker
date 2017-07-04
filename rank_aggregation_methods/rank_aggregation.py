@@ -11,6 +11,11 @@ class RankAggregation(object):
         self.aggregated_rank = Rank()
 
     def load_rank_list(self, rank_list):
+        """
+        :param rank_list: RankList() Object.
+        :return: nothing, it just set the RankList() object in the current
+        RankAggregation() object.
+        """
         self.rank_list = rank_list
 
     def get_rank_by_index(self, rank_index):
