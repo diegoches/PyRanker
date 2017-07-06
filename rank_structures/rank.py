@@ -19,6 +19,11 @@ class Rank(object):
         return len(self.rank)
 
     def get_element(self, element_index):
+        """
+        :param element_index: Integer that represents the index of a
+        RankElement() object in the rank list.
+        :return: A RankElement() object.
+        """
         return self.rank[element_index]
 
     def add_element(self, rank_element):
