@@ -46,6 +46,11 @@ class Rank(object):
             self.add_element(current_rank_element)
 
     def process_rank(self):
+        """
+        :return: Nothing, it sort the rank by the similitude of the
+        RankElement() objects and re-assign the rank value of the
+        RankElement() objects.
+        """
         def helper_sort(x):
             return x.similitude
         self.rank.sort(key=helper_sort, reverse=True)
