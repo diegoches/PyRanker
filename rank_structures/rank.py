@@ -27,6 +27,11 @@ class Rank(object):
         return self.rank[element_index]
 
     def add_element(self, rank_element):
+        """
+        :param rank_element: RankElement() object to be inserted in the
+        current rank.
+        :return: Nothing.
+        """
         if isinstance(rank_element, RankElement):
             self.rank.append(rank_element)
         else:
