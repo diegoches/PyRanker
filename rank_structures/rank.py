@@ -38,6 +38,12 @@ class Rank(object):
             raise TypeError('rank_element is not of RankElement class')
 
     def add_dictionary(self, dictionary):
+        """
+        :param dictionary: Dictionary with rank element ids as keys, and its
+        similarity as values.
+        :return: Nothing, it fulfill the rank attribute from this Rank()
+        object.
+        """
         self.rank = []
         list_of_tuples = sorted(dictionary.items(), key=operator.itemgetter(1),
                                 reverse=True)
