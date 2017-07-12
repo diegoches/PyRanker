@@ -20,6 +20,10 @@ class RankList(object):
                                  ranks=rank_list_as_string)
 
     def add_rank(self, rank):
+        """
+        :param rank: Rank() object to be added to the self.ranks list.
+        :return: Nothing.
+        """
         if isinstance(rank, Rank):
             self.ranks.append(rank)
             self.ranks_quantity += 1
