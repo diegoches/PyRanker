@@ -31,4 +31,9 @@ class RankList(object):
             raise TypeError('rank is not of Rank class')
 
     def get_rank(self, rank_index):
+        """
+        :param rank_index: Integer that refers to the Rank() object in the
+        list.
+        :return: Rank() object.
+        """
         return self.ranks[rank_index]

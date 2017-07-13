@@ -13,7 +13,6 @@ class LoadFromFile(object):
         :return: Boolean indicating that the attributes_order is ok (True) or
         not (False).
         """
-
         has_correct_3 = 's' in attributes_order and 'i' in attributes_order
 
         has_correct_2 = 'i' in attributes_order and \
@@ -68,7 +67,6 @@ class LoadFromFile(object):
         'r', 'r' can be missed.
         :return: A Rank() object
         """
-
         try:
             if not cls.validate_attributes_order(attributes_order):
                 raise RuntimeError('Not valid attribute order: {0}'.format(
