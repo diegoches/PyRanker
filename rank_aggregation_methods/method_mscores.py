@@ -36,7 +36,8 @@ class RankMScores(RankAggregation):
         # m root of scores
         for k, v in dict_mapper.items():
             dict_mapper[k] = \
-                math.pow(v, 1.0/self.rank_list.ranks_quantity) / float(self.rank_list.ranks_quantity)
+                math.pow(v, 1.0/self.rank_list.ranks_quantity) / \
+                float(self.rank_list.ranks_quantity)
 
         # The new similarity is the normalized scores.
         max_score = max(dict_mapper.values())

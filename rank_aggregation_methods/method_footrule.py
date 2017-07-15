@@ -26,7 +26,8 @@ class RankFootrule(RankAggregation):
         if self.rank_list.ranks_quantity == 2:
             half_limit = 2
         else:
-            half_limit = int(math.ceil(float(self.rank_list.ranks_quantity) / 2))
+            half_limit = \
+                int(math.ceil(float(self.rank_list.ranks_quantity) / 2))
 
         rank_size = len(self.rank_list.ranks[0])
         if len(tp_param) >= 1:
@@ -43,8 +44,9 @@ class RankFootrule(RankAggregation):
                 current_rank_element = current_rank.rank[i]
 
                 if current_rank_element.id not in auxiliary_dict and current_rank_element.id not in aggregated_dict:
-                    # The element is neither in the subset of known elements nor in the final rank.
-                    # It consists of an element not considered yet. The element starts with a vote.
+                    # The element is neither in the subset of known elements
+                    # nor in the final rank. It consists of an element not
+                    # considered yet. The element starts with a vote.
                     auxiliary_dict[current_rank_element.id] = 1
 
                 elif current_rank_element.id in auxiliary_dict:
@@ -53,9 +55,12 @@ class RankFootrule(RankAggregation):
 
                     # Check if the element has the necessary number of votes.
                     if auxiliary_dict[current_rank_element.id] == half_limit:
-                        aggregated_dict[current_rank_element.id] = current_position
-                        new_rank_element = RankElement(None, current_rank_element.id, current_position)
-                        # The element is inserted in the next position available in the final rank.
+                        aggregated_dict[current_rank_element.id] = \
+                            current_position
+                        new_rank_element = RankElement(
+                            None, current_rank_element.id, current_position)
+                        # The element is inserted in the next position
+                        # available in the final rank.
                         self.aggregated_rank.add_element(new_rank_element)
 
                         if len(self.aggregated_rank.rank) == n:

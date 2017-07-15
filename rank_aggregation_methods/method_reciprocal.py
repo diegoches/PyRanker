@@ -22,7 +22,8 @@ class RankReciprocal(RankAggregation):
     # \return A ranked list with the same structure as the ls_data attribute
     def rank(self, mitigation=60):
         if mitigation < 0:
-            raise ValueError('mitigation parameter must be greater than or equal to zero.')
+            raise ValueError(
+                'mitigation parameter must be greater than or equal to zero.')
 
         # Initialize map of ranks from first ranked list
         dict_mapper = {}
