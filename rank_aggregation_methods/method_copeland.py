@@ -47,7 +47,6 @@ class RankCopeland(RankAggregation):
                         score_matrix[row][column] += 1
                 winners_list.append(row)
 
-
         # Compute the points for each element according to the score matrix
         points_list = [0 for a in xrange(ranks_size)]
         for i in xrange(ranks_size):
