@@ -44,5 +44,5 @@ class RankMScores(RankAggregation):
         for k, v in dict_mapper.items():
             dict_mapper[k] = v / float(max_score)
 
-        self.aggregated_rank.add_dictionary((dict_mapper))
+        self.aggregated_rank.add_dictionary(dict_mapper)
         return self.aggregated_rank

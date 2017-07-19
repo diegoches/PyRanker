@@ -22,7 +22,7 @@ class RankMedianRank(RankAggregation):
         for e in self.rank_list.ranks[0].rank:
             dict_mapper[e.id] = [e.rank]
 
-        # Add positons of others ranked lists
+        # Add positions of others ranked lists
         for i in xrange(1, self.rank_list.ranks_quantity):
             for e in self.rank_list.ranks[i].rank:
                 dict_mapper[e.id].append(e.rank)
@@ -44,7 +44,7 @@ class RankMedianRank(RankAggregation):
         size = len(list_of_ranks)
         if size % 2 == 0:
             index_1 = (size/2) - 1
-            index_2 = index_1 +1
+            index_2 = index_1 + 1
             median_1 = list_of_ranks[index_1]
             median_2 = list_of_ranks[index_2]
             median = (median_1 + median_2) / 2.0
