@@ -30,6 +30,7 @@ class RankCombANZ(RankAggregation):
                         count_dictionary[element.id] = 1
                     else:
                         count_dictionary[element.id] += 1
+
                 if element.id in temporal_dictionary:
                     temporal_dictionary[element.id] += element.similitude
                 else:
