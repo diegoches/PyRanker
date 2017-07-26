@@ -10,12 +10,14 @@ import operator
 # \cite Fox:1994 .
 class RankCombMAX(RankAggregation):
 
-    # \fn rank 
-    # The rank function uses the CombMAX algorithm to compute a new ranked 
-    # list for the query object.
-    # \param tp_param The CombMAX algorithm does not use any hyper-parameter.
-    # \return A ranked list with the same structure as the ls_data attribute
     def rank(self, *tp_param):
+        """
+        The rank function uses the CombMAX algorithm to compute a new ranked
+        list for the query object.
+        :param tp_param: The CombMAX algorithm does not use any
+        hyper-parameter.
+        :return: A Rank() object.
+        """
         
         # Get the maximum similarity for each object.
         temporal_dictionary = {}
