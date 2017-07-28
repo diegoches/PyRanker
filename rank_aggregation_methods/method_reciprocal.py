@@ -14,16 +14,18 @@ from rank_aggregation import RankAggregation
 # \cite Cormack:2009 . 
 class RankReciprocal(RankAggregation):
 
-    # \fn rank 
-    # The rank function uses the RRF algorithm to compute a new ranked 
-    # list for the query object.
-    # \param tp_param Is a constant that mitigates the impact of high 
-    # rankings by outlier systems.
-    # \return A ranked list with the same structure as the ls_data attribute
     def rank(self, mitigation=60):
+        """
+        The rank function uses the RRF algorithm to compute a new ranked list
+        for the query object.
+        :param mitigation: Integer constant that mitigates the impact of high
+        rankings by outlier systems.
+        :return: Rank() object that represents the ranked list result.
+        """
         if mitigation < 0:
             raise ValueError(
-                'mitigation parameter must be greater than or equal to zero.')
+                'Error: Mitigation parameter must be greater than or equal '
+                'to zero.')
 
         # Initialize map of ranks from first ranked list
         dict_mapper = {}
