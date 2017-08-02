@@ -16,7 +16,7 @@ class RankCombMAX(RankAggregation):
         list for the query object.
         :param tp_param: The CombMAX algorithm does not use any
         hyper-parameter.
-        :return: A Rank() object.
+        :return: A Rank() object that represents the ranked list result.
         """
         
         # Get the maximum similarity for each object.

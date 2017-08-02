@@ -10,13 +10,14 @@ from rank_aggregation import RankAggregation
 # ranked list, and then it order them in ascending order.
 # \cite Young:74 .
 class RankBorda(RankAggregation):
-    # The rank function uses the Borda algorithm to compute a new ranked
-    # list for the query object.
-    # \param tp_param The Borda algorithm does not use any hyper-parameter.
-    # \return A ranked list with the same structure as the ls_data attribute 
-    # (a list of dictionaries, each dictionary with three
-    # keys ('sim','id','rank')).
+
     def rank(self, *tp_param):
+        """
+        The rank function uses the Borda algorithm to compute a new ranked
+        list for the query object.
+        :param tp_param: The Borda algorithm does not use any hyper-parameter.
+        :return: A Rank() object that represents the ranked list result.
+        """
 
         dict_mapper = {}
 
