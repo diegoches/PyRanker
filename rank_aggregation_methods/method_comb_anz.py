@@ -12,12 +12,15 @@ import operator
 # and then it order them in descending order.
 # \cite Fox:1994 .
 class RankCombANZ(RankAggregation):
-    # \fn rank
-    # The rank function uses the CombANZ algorithm to compute a new ranked
-    # list for the query object.
-    # \param tp_param The CombANZ algorithm does not use any hyper-parameter.
-    # \return A ranked list with the same structure as the ls_data attribute
+
     def rank(self, *tp_param):
+        """
+        The rank function uses the CombANZ algorithm to compute a new ranked
+        list for the query object.
+        :param tp_param: The CombANZ algorithm does not use any
+        hyper-parameter.
+        :return: A Rank() object that represents the ranked list result.
+        """
 
         # Sums the similarities of each object in a dictionary where each key
         # is the id of each object, and counts the non zero similarities.
